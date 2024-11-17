@@ -105,7 +105,7 @@
     color: #555b6d;
     border: 0;
     border-radius: 0;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 100;
 }
 
@@ -257,7 +257,7 @@ body[data-sidebar="dark"] .logo-light {
 .page-title-box h4 {
     text-transform: capitalize;
     font-weight: 400;
-    font-size: 19px !important;
+    font-size: 17px !important;
 }
 
 .footer {
@@ -478,10 +478,10 @@ body[data-sidebar="dark"] .logo-light {
     letter-spacing: 0.05em;
     pointer-events: none;
     cursor: default;
-    font-size: 12px;
+    font-size: 13px;
     text-transform: uppercase;
     color: #7f8387;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .mm-active {

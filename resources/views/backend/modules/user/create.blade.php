@@ -90,15 +90,13 @@
                                 </div>
                             </div>
 
-                            <div class="mt-3 text-end">
-                                <button type="submit" class="btn btn-primary btn-submit">
-                                    @if (isset($user))
-                                    Update
-                                    @else
-                                    Create
-                                    @endif
-                                </button>
-                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                @if (isset($user))
+                                Update
+                                @else
+                                Create
+                                @endif
+                            </button>
 
                         </form>
                     </div>
