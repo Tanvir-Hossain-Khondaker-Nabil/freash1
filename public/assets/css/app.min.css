@@ -1,11 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap);
-@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap");
-@font-face {
-    font-family: "ITC Benguiat";
-    src: url("../fonts/ITCBenguiatStdBoldCn.OTF") format("opentype");
-    font-weight: normal;
-    font-style: normal;
-}
 
 #page-topbar {
     position: fixed;
@@ -18,11 +11,8 @@
 }
 
 .navbar-header {
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: justify;
     justify-content: space-between;
-    -ms-flex-align: center;
     align-items: center;
     margin: 0 auto;
     height: 70px;
@@ -115,6 +105,8 @@
     color: #555b6d;
     border: 0;
     border-radius: 0;
+    font-size: 16px;
+    font-weight: 100;
 }
 
 .header-item:hover {
@@ -263,9 +255,9 @@ body[data-sidebar="dark"] .logo-light {
 }
 
 .page-title-box h4 {
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 16px !important;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 20px !important;
 }
 
 .footer {
@@ -431,7 +423,7 @@ body[data-sidebar="dark"] .logo-light {
     padding: 0.625rem 1.5rem;
     color: #545a6d;
     position: relative;
-    font-size: 13px;
+    font-size: 14px;
     transition: all 0.4s;
 }
 
@@ -486,10 +478,10 @@ body[data-sidebar="dark"] .logo-light {
     letter-spacing: 0.05em;
     pointer-events: none;
     cursor: default;
-    font-size: 11px;
+    font-size: 12px;
     text-transform: uppercase;
     color: #7f8387;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .mm-active {
@@ -996,8 +988,6 @@ body[data-sidebar="dark"] .menu-title {
     cursor: pointer;
     display: inline-block;
     overflow: hidden;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
 }
 
@@ -1166,24 +1156,19 @@ body[data-sidebar="dark"] .menu-title {
 }
 
 .avatar-title {
-    -ms-flex-align: center;
     align-items: center;
-    background-color: #556ee6;
+    background-color: #0d90aa;
     color: #fff;
-    display: -ms-flexbox;
     display: flex;
     font-weight: 500;
     height: 100%;
-    -ms-flex-pack: center;
     justify-content: center;
     width: 100%;
 }
 
 .avatar-group {
     padding-left: 12px;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 
@@ -1200,16 +1185,13 @@ body[data-sidebar="dark"] .menu-title {
 }
 
 .custom-accordion .accordion-list {
-    display: -ms-flexbox;
     display: flex;
     border-radius: 7px;
     background-color: #f6f6f6;
     padding: 12px 20px;
     color: #495057;
     font-weight: 600;
-    -ms-flex-align: center;
     align-items: center;
-    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
@@ -1453,27 +1435,6 @@ body[data-sidebar="dark"] .menu-title {
     100% {
         transform: scale(1);
     }
-}
-
-[type="email"]::-moz-placeholder,
-[type="number"]::-moz-placeholder,
-[type="tel"]::-moz-placeholder,
-[type="url"]::-moz-placeholder {
-    text-align: left;
-}
-
-[type="email"]:-ms-input-placeholder,
-[type="number"]:-ms-input-placeholder,
-[type="tel"]:-ms-input-placeholder,
-[type="url"]:-ms-input-placeholder {
-    text-align: left;
-}
-
-[type="email"]::-ms-input-placeholder,
-[type="number"]::-ms-input-placeholder,
-[type="tel"]::-ms-input-placeholder,
-[type="url"]::-ms-input-placeholder {
-    text-align: left;
 }
 
 [type="email"]::placeholder,
@@ -1871,15 +1832,10 @@ body[data-sidebar="dark"] .menu-title {
 
 [data-simplebar] {
     position: relative;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -ms-flex-pack: start;
     justify-content: flex-start;
-    -ms-flex-line-pack: start;
     align-content: flex-start;
-    -ms-flex-align: start;
     align-items: flex-start;
 }
 
@@ -1992,8 +1948,6 @@ body[data-sidebar="dark"] .menu-title {
 
 [data-simplebar].simplebar-dragging .simplebar-content {
     pointer-events: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
 }
 
@@ -2066,16 +2020,6 @@ body[data-sidebar="dark"] .menu-title {
     margin-top: -26px;
 }
 
-::-webkit-scrollbar {
-    width: 3px;
-    height: 10px;
-    border-radius: 50px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #c0c0c0;
-}
-
 .card {
     box-shadow: 2px 2px 8px #c0c0c0e3;
 }
@@ -2111,10 +2055,103 @@ body[data-sidebar="dark"] .menu-title {
     background-image: none;
 }
 
+#toggle-password {
+    border: 1px solid #d1d1d1;
+}
+
+/* Customize DataTable container */
+#datatable_wrapper {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* Header Row Styles */
+#datatable thead {
+    background-color: #025a6c;
+    color: white;
+}
+
+#datatable thead th {
+    font-weight: bold;
+    padding: 12px;
+}
+
+/* Data Row Styles */
+#datatable tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+#datatable tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+#datatable tbody td {
+    padding: 12px;
+}
+
+/* Hover Effect */
+#datatable tbody tr:hover {
+    background-color: #d1e7ff;
+}
+
+div.dataTables_wrapper div.dataTables_filter input,
+div.dataTables_wrapper div.dataTables_length select {
+    height: 30px !important;
+    font-size: 13px !important;
+}
+
+.form-control {
+    height: 46px !important;
+    border-radius: 2px !important;
+    font-size: 14px !important;
+    font-weight: 100 !important;
+}
+
+.form-select {
+    height: 46px !important;
+    border-radius: 2px !important;
+    font-size: 14px !important;
+    font-weight: 100 !important;
+    border: 1px solid #ced4da !important; /* Lighter border color */
+    background-color: #fff !important; /* White background for select */
+    box-shadow: none !important; /* Remove default box shadow */
+}
+
+.btn-submit {
+    background: #0788a2 !important;
+    border: none !important;
+    height: 40px !important;
+    width: 120px !important;
+}
+
+.breadcrumb-item > a,
+.breadcrumb-item.active {
+    font-weight: 100;
+    font-size: 16px;
+}
+
+.bashboard-count{
+    font-size: 20px;
+}
+
 ::placeholder {
     color: silver !important;
 }
 
-#toggle-password {
-    border: 1px solid #d1d1d1;
+::-webkit-scrollbar {
+    width: 3px;
+    height: 10px;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+}
+
+:focus {
+    outline: none !important; 
+}
+
+:focus-visible{
+    outline: none !important; 
 }

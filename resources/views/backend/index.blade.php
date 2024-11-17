@@ -31,7 +31,7 @@
                                     <div class="d-flex">
                                         <div class="flex-grow-1">
                                             <p class="text-muted fw-medium">Service</p>
-                                            <h4 class="mb-0">100</h4>
+                                            <h4 class="mb-0 bashboard-count">100</h4>
                                         </div>
 
                                         <div class="flex-shrink-0 align-self-center">
@@ -51,7 +51,7 @@
                                     <div class="d-flex">
                                         <div class="flex-grow-1">
                                             <p class="text-muted fw-medium">Profolio</p>
-                                            <h4 class="mb-0">100</h4>
+                                            <h4 class="mb-0 bashboard-count">100</h4>
                                         </div>
 
                                         <div class="flex-shrink-0 align-self-center">
@@ -71,7 +71,7 @@
                                     <div class="d-flex">
                                         <div class="flex-grow-1">
                                             <p class="text-muted fw-medium">Team</p>
-                                            <h4 class="mb-0">10</h4>
+                                            <h4 class="mb-0 bashboard-count">10</h4>
                                         </div>
 
                                         <div class="flex-shrink-0 align-self-center">
@@ -91,7 +91,7 @@
                                     <div class="d-flex">
                                         <div class="flex-grow-1">
                                             <p class="text-muted fw-medium">Review</p>
-                                            <h4 class="mb-0">100</h4>
+                                            <h4 class="mb-0 bashboard-count">100</h4>
                                         </div>
 
                                         <div class="flex-shrink-0 align-self-center">
