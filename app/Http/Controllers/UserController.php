@@ -79,7 +79,7 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required|min:3|max:255',
             'email' => 'required|email|unique:users,email,' . $user->id,
-            'password' => 'nullable|min:6|confirmed',
+            'password' => 'required|min:6|confirmed',
         ]);
 
         $user_data = $request->except(['photo']);

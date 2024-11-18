@@ -46,7 +46,7 @@
                                         <label for="name" class="form-label">Name</label>
                                         <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" value="{{ old('name', @$user->name) }}" placeholder="Enter Your Name">
                                         @error('name')
-                                            <div class="text-danger">{{ $message }}</div>
+                                        <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@
                                         <label for="email" class="form-label">Email</label>
                                         <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" value="{{ old('email', @$user->email) }}" placeholder="Enter Your Email">
                                         @error('email')
-                                            <div class="text-danger">{{ $message }}</div>
+                                        <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
@@ -66,7 +66,7 @@
                                         <label for="password" class="form-label">Password</label>
                                         <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Enter Your Password">
                                         @error('password')
-                                            <div class="text-danger">{{ $message }}</div>
+                                        <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
@@ -76,7 +76,7 @@
                                         <label for="password_confirmation" class="form-label">Confirm Password</label>
                                         <input type="password" name="password_confirmation" class="form-control @error('password_confirmation') is-invalid @enderror" id="password_confirmation" placeholder="Confirm Your Password">
                                         @error('password_confirmation')
-                                            <div class="text-danger">{{ $message }}</div>
+                                        <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
@@ -84,10 +84,9 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="photo" class="form-label">Upload Photo</label>
-                                        <input type="file" name="photo" class="dropify @error('photo') is-invalid @enderror" id="photo" 
-                                        data-default-file="{{ isset($user) && $user->photo ? asset($user->photo) : '' }}" />
+                                        <input type="file" name="photo" class="dropify @error('photo') is-invalid @enderror" id="photo" data-default-file="{{ isset($user) && $user->photo ? asset($user->photo) : '' }}" />
                                         @error('photo')
-                                            <div class="text-danger">{{ $message }}</div>
+                                        <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
@@ -106,7 +105,7 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
     <!-- container-fluid -->
 </div>
 @endsection

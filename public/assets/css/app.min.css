@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap);
 
-
 ::placeholder {
     color: silver !important;
 }
@@ -16,11 +15,11 @@
 }
 
 :focus {
-    outline: none !important; 
+    outline: none !important;
 }
 
-:focus-visible{
-    outline: none !important; 
+:focus-visible {
+    outline: none !important;
 }
 
 #page-topbar {
@@ -2043,10 +2042,6 @@ body[data-sidebar="dark"] .menu-title {
     margin-top: -26px;
 }
 
-.card {
-    box-shadow: 2px 2px 8px #c0c0c0e3;
-}
-
 .dropify-wrapper {
     /* background-color: #f9f9f9; */
     border-radius: 8px;
@@ -2082,50 +2077,6 @@ body[data-sidebar="dark"] .menu-title {
     border: 1px solid #d1d1d1;
 }
 
-/* Customize DataTable container */
-#datatable_wrapper {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-}
-
-/* Header Row Styles */
-#datatable thead {
-    background-color: #0788a2;
-    color: white;
-}
-
-#datatable thead th {
-    font-weight: bold;
-    padding: 12px 0;
-    min-width:250px;
-    text-align: center;
-}
-
-/* Data Row Styles */
-#datatable tbody tr:nth-child(odd) {
-    background-color: #f2f2f2;
-}
-
-#datatable tbody tr:nth-child(even) {
-    background-color: #ffffff;
-}
-
-#datatable tbody td {
-    padding: 12px 0;
-    text-align: center;
-}
-
-/* Hover Effect */
-#datatable tbody tr:hover {
-    background-color: #d1e7ff;
-}
-
-div.dataTables_wrapper div.dataTables_filter input,
-div.dataTables_wrapper div.dataTables_length select {
-    height: 30px !important;
-    font-size: 13px !important;
-}
-
 .form-control {
     height: 46px !important;
     border-radius: 2px !important;
@@ -2156,19 +2107,19 @@ div.dataTables_wrapper div.dataTables_length select {
     font-size: 16px;
 }
 
-.bashboard-count{
+.bashboard-count {
     font-size: 20px;
 }
 
-.img-circle{
-    max-width: 80px; 
-    border-radius:100%;
+.img-circle {
+    max-width: 80px;
+    border-radius: 100%;
     object-fit: cover;
 }
 
-.img-square{
-    max-width: 80px; 
-    border-radius:0;
+.img-square {
+    max-width: 80px;
+    border-radius: 0;
     object-fit: cover;
 }
 
@@ -2177,14 +2128,94 @@ div.dataTables_wrapper div.dataTables_length select {
     border-radius: 8px !important;
     border: 1px solid #96969652 !important;
     padding: 20px !important;
-    border-radius: 3px !important;
-    height: auto; 
+    border-radius: 1px !important;
+    height: auto;
 }
 
 .dropify-wrapper:hover {
     background-image: none !important;
 }
 
-input[type="file"] {
-    height: auto; 
+/* Customize DataTable container */
+#datatable_wrapper {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Header Row Styles */
+#datatable thead {
+    background-color: #0788a2;
+    color: white;
+    text-align: center;
+}
+
+#datatable thead th {
+    font-weight: bold;
+    padding: 12px 20px;
+    text-transform: uppercase;
+}
+
+/* Data Row Styles */
+#datatable tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+#datatable tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+#datatable tbody td {
+    padding: 12px 20px;
+}
+
+/* Hover Effect */
+#datatable tbody tr:hover {
+    background-color: #d1e7ff;
+}
+
+/* Search and Length Controls */
+div.dataTables_wrapper div.dataTables_filter input,
+div.dataTables_wrapper div.dataTables_length select {
+    height: 35px !important;
+    font-size: 14px !important;
+    padding: 5px 10px;
+}
+
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+    border-bottom: none;
+}
+
+table.dataTable thead th,
+table.dataTable thead td {
+    border-bottom: none;
+}
+
+/* Modern card styling */
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark themed table header */
+.thead-custom th {
+    background-color: #0788a2;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Responsive Design for small screens */
+@media (max-width: 767px) {
+    #datatable td {
+        font-size: 12px;
+        padding: 10px 8px;
+    }
+
+    /* Ensure that the table is scrollable on small screens */
+    .table-responsive {
+        overflow-x: auto;
+    }
 }
