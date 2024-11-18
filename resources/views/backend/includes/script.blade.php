@@ -5,7 +5,6 @@
 <script src="{{ asset('assets/libs/node-waves/waves.min.js') }}"></script>
 
 <!-- DataTable Script and Initialization -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/bs4/1.11.5/js/dataTables.bootstrap4.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.2.0/js/dataTables.buttons.min.js"></script>
@@ -52,38 +51,47 @@
     $(document).ready(function() {
         // Check if the DataTable is already initialized
         if (!$.fn.dataTable.isDataTable('#datatable')) {
+            console.log("Initializing DataTable...");
+
             var table = $('#datatable').DataTable({
-                paging: true
-                , searching: true
-                , lengthChange: true
-                , info: true
-                , autoWidth: false
-                , responsive: true
-                , scrollX: true
-                , order: [
-                    [0, 'asc']
-                ], // Sort by ID column (ascending)
-                dom: 'Bfrtip', // Buttons (copy, export, etc.)
-                buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print', 'colvis'
-                ]
-                , language: {
-                    search: 'Search Users:'
-                    , lengthMenu: 'Display _MENU_ records per page'
-                    , zeroRecords: 'No matching records found'
-                    , info: 'Showing _START_ to _END_ of _TOTAL_ entries'
-                    , infoEmpty: 'No records available'
-                    , infoFiltered: '(filtered from _MAX_ total records)'
+                paging: true,           // Enable pagination
+                searching: true,        // Enable search box
+                lengthChange: true,     // Enable changing the number of records per page
+                info: true,             // Show table information (e.g., "Showing 1 to 10 of 50 entries")
+                autoWidth: true,       // Disable auto column width adjustment
+                responsive: true,       // Make table responsive on smaller screens
+                scrollX: true,         // Enable horizontal scrolling
+                order: [[0, 'asc']],    // Initial sort by the first column (ID) in ascending order
+                columnDefs: [{
+                    targets: 1,          // Assuming the second column (index 1) is "Name"
+                    type: 'string'       // Case-insensitive sorting for string values
+                }],
+                lengthMenu: [
+                    [5, 10, 20, 50, 100],  // Page length options
+                    ['5', '10', '20', '50', '100']  // Labels for the options
+                ],
+                language: {
+                    search: 'Search Records:',           // Custom search box placeholder
+                    lengthMenu: 'Display _MENU_ records per page',  // Custom page length menu
+                    zeroRecords: 'No matching records found',   // Custom message when no records match the search
+                    info: 'Showing _START_ to _END_ of _TOTAL_ entries',  // Custom info message
+                    infoEmpty: 'No records available',            // Custom message when the table is empty
+                    infoFiltered: '(filtered from _MAX_ total records)'  // Custom filtered message
                 }
             });
+
+            // Log table initialization success
+            console.log("DataTable initialized successfully.");
 
             // Adjust table layout on window resize
             $(window).on('resize', function() {
                 table.columns.adjust();
             });
+        } else {
+            console.log("DataTable is already initialized.");
         }
     });
-
 </script>
+
 
 @stack('js')
