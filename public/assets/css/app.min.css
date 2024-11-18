@@ -2112,13 +2112,13 @@ body[data-sidebar="dark"] .menu-title {
 }
 
 .img-circle {
-    max-width: 80px;
+    max-width: 70px;
     border-radius: 100%;
     object-fit: cover;
 }
 
 .img-square {
-    max-width: 80px;
+    max-width: 70px;
     border-radius: 0;
     object-fit: cover;
 }
@@ -2167,6 +2167,12 @@ body[data-sidebar="dark"] .menu-title {
 
 #datatable tbody td {
     padding: 12px 20px;
+    text-align: center;
+    vertical-align: top;
+}
+
+#datatable tr .child {
+    text-align: start;
 }
 
 /* Hover Effect */
@@ -2186,9 +2192,14 @@ div.dataTables_wrapper div.dataTables_length select {
     border-bottom: none;
 }
 
+table.dataTable.no-footer {
+    border-bottom: none;
+}
+
 table.dataTable thead th,
 table.dataTable thead td {
     border-bottom: none;
+    min-width: 200px;
 }
 
 /* Modern card styling */
@@ -2217,5 +2228,9 @@ table.dataTable thead td {
     /* Ensure that the table is scrollable on small screens */
     .table-responsive {
         overflow-x: auto;
+    }
+
+    #datatable_wrapper {
+        padding:0;
     }
 }

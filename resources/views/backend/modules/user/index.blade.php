@@ -25,14 +25,14 @@
                 <div class="card rounded-lg shadow-sm border-0">
                     <div class="card-body pt-4 table-responsive">
                         <!-- DataTable -->
-                        <table id="datatable" class="table table-hover table-bordered dt-responsive nowrap w-100">
+                        <table id="datatable" class="table table-hover table-bordered dt-responsive w-100">
                             <thead class="thead-custom">
                                 <tr>
-                                    <th>ID</th>
+                                    <th style="min-width: 100px">ID</th>
                                     <th>Image</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Actions</th>
+                                    <th style="min-width: 150px">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
