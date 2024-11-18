@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -14,7 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::get();
+        $users = User::all();
         return view('backend.modules.user.index', compact('users'));
     }
 
@@ -34,27 +33,35 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required|min:3|max:255',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6|confirmed', // password_confirmation will be validated automatically
+            'password' => 'required|min:6|confirmed',
         ]);
 
-        // Create the user
+        $photo = null;
+        if ($file = $request->file('photo')) {
+            $photoName = time() . '.' . $file->getClientOriginalExtension();
+            $photo = $file->move('upload/image/', $photoName);
+        }
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'photo' => $photo,
         ]);
 
-        session()->flash('msg', 'Create Successfully');
+        session()->flash('msg', 'User created successfully.');
         session()->flash('cls', 'success');
 
         return redirect()->route('users.index');
     }
 
-
     /**
      * Display the specified resource.
      */
-    public function show(User $user) {}
+    public function show(User $user)
+    {
+        return view('backend.modules.user.show', compact('user'));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -72,40 +79,45 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required|min:3|max:255',
             'email' => 'required|email|unique:users,email,' . $user->id,
-            'password' => 'nullable|min:6|confirmed', // password_confirmation will be validated automatically
+            'password' => 'nullable|min:6|confirmed',
         ]);
 
-        // If the password is not empty, update it
-        if ($request->password) {
-            $user->password = Hash::make($request->password);
+        $user_data = $request->except(['photo']);
+
+        if ($file = $request->file('photo')) {
+            $deleteOldImage = $user->photo;
+            if ($deleteOldImage && file_exists(public_path($deleteOldImage)) && is_file(public_path($deleteOldImage))) {
+                unlink(public_path($deleteOldImage)); 
+            }
+
+            $imageName = time() . '.' . $file->getClientOriginalExtension();
+            $user_data['photo'] = $file->move('upload/image/', $imageName);
+        } else {
+            $user_data['photo'] = $user->photo;
         }
 
-        // Update the other user details
-        $user->update([
-            'name' => $request->name,
-            'email' => $request->email,
-        ]);
+        $user->update($user_data);
 
-        session()->flash('msg', 'Update Successfully');
+        session()->flash('msg', 'User updated successfully.');
         session()->flash('cls', 'warning');
 
         return redirect()->route('users.index');
     }
-
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(User $user)
     {
-        // $deleteOldImage = $user->photo;
-        // if(file_exists($deleteOldImage)){
-        //     unlink($deleteOldImage);
-        // }
+        if ($user->photo && file_exists(public_path($user->photo)) && is_file(public_path($user->photo))) {
+            unlink(public_path($user->photo)); 
+        }
 
         $user->delete();
-        session()->flash('msg', 'Delete Successfully');
+
+        session()->flash('msg', 'User deleted successfully.');
         session()->flash('cls', 'error');
+
         return redirect()->route('users.index');
     }
 }

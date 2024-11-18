@@ -1,5 +1,28 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap);
 
+
+::placeholder {
+    color: silver !important;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+    height: 10px;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+}
+
+:focus {
+    outline: none !important; 
+}
+
+:focus-visible{
+    outline: none !important; 
+}
+
 #page-topbar {
     position: fixed;
     top: 0;
@@ -2067,13 +2090,15 @@ body[data-sidebar="dark"] .menu-title {
 
 /* Header Row Styles */
 #datatable thead {
-    background-color: #025a6c;
+    background-color: #0788a2;
     color: white;
 }
 
 #datatable thead th {
     font-weight: bold;
-    padding: 12px;
+    padding: 12px 0;
+    min-width:250px;
+    text-align: center;
 }
 
 /* Data Row Styles */
@@ -2086,7 +2111,8 @@ body[data-sidebar="dark"] .menu-title {
 }
 
 #datatable tbody td {
-    padding: 12px;
+    padding: 12px 0;
+    text-align: center;
 }
 
 /* Hover Effect */
@@ -2134,24 +2160,31 @@ div.dataTables_wrapper div.dataTables_length select {
     font-size: 20px;
 }
 
-::placeholder {
-    color: silver !important;
+.img-circle{
+    max-width: 80px; 
+    border-radius:100%;
+    object-fit: cover;
 }
 
-::-webkit-scrollbar {
-    width: 3px;
-    height: 10px;
-    border-radius: 50px;
+.img-square{
+    max-width: 80px; 
+    border-radius:0;
+    object-fit: cover;
 }
 
-::-webkit-scrollbar-thumb {
-    background: #c0c0c0;
+.dropify-wrapper {
+    background-color: #ffffff !important;
+    border-radius: 8px !important;
+    border: 1px solid #96969652 !important;
+    padding: 20px !important;
+    border-radius: 3px !important;
+    height: auto; 
 }
 
-:focus {
-    outline: none !important; 
+.dropify-wrapper:hover {
+    background-image: none !important;
 }
 
-:focus-visible{
-    outline: none !important; 
+input[type="file"] {
+    height: auto; 
 }

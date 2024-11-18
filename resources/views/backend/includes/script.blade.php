@@ -1,4 +1,4 @@
-<script src="{{ asset('assets/libs/jquery/jquery.min.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('assets/libs/metismenu/metisMenu.min.js') }}"></script>
 <script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
@@ -24,7 +24,20 @@
 <!-- App js -->
 <script src="{{ asset('assets/js/app.js') }}"></script>
 
+<!-- Include Dropify JS and CSS from jsdelivr -->
 <script src="https://cdn.jsdelivr.net/npm/dropify/dist/js/dropify.min.js"></script>
+
+<script>
+    // Initialize Dropify
+    $(document).ready(function() {
+        // Initialize Dropify
+        $('.dropify').dropify({
+            messages: {
+                'default': 'Drag and drop a file here or <span>click</span>'
+            }
+        });
+    });
+</script>
 
 @stack('js')
 <script>
@@ -36,12 +49,4 @@
         }, 2000)
     });
 
-    $(document).ready(function() {
-        // Initialize Dropify
-        $('.dropify').dropify({
-            messages: {
-                'default': 'Drag and drop a file here or <span>click</span>'
-            }
-        });
-    });
 </script>

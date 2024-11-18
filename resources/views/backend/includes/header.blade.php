@@ -11,9 +11,17 @@
         </div>
         <div class="d-flex">
             <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="d-xl-inline-block ms-1 ">{{ Auth::user()->name }}</span>
-                    <i class="mdi mdi-chevron-down d-xl-inline-block"></i>
+                <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <!-- User Profile Picture -->
+                    <img class="rounded-circle header-profile-user" 
+                         src="{{ Auth::user()->photo ? asset(Auth::user()->photo) : "https://img.icons8.com/fluency/96/user-male-circle.png" }}" 
+                         alt="Header Avatar">
+                    <!-- User Name -->
+                    @if (isset(Auth::user()->name))
+                        <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ Auth::user()->name }}</span>
+                    @endif
+                    <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <a class="dropdown-item" href="{{ route('users.index') }}">
